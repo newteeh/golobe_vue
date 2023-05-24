@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import customSelect from "@/components/customSelect.vue";
 import Home from "@/views/Home.vue"
+import customSelectFromTo from "@/components/customSelectFromTo.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,9 +13,10 @@ const router = createRouter({
     },
     {
       path:'/customSelect',
-      name:'customSelect',
-      component: customSelect
-    }
+      name:'customSelectFromTo',
+      component: customSelectFromTo
+    },
+
   ]
 })
 

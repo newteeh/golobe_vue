@@ -213,3 +213,15 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 
 /*main-page__search-menu*__body__form__middle*/
+.main-page__search-menu__body__form__middle{
+
+}
+.select-box__from-to{
+
+}
+.select-box__from{
+    z-index: 2;
+}
+.select-box__to{
+    z-index: 1;
+}

@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "vue": "^3.3.2",
-    "vue-router": "^4.2.0"
+    "vue-flatpickr-component": "^11.0.3",
+    "vue-router": "^4.2.0",
+    "vuejs-datepicker": "^0.9.9"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",

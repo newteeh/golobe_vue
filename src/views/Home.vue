@@ -52,22 +52,10 @@
               </div>
               <div class="main-page__search-menu__body__form__middle">
                 <div class="select-box__from-to">
-                  <div class="select-box__from">
-                    <label for="from">From</label>
-                    <select name="from" id="from">
-                      <option value="1">Lahore</option>
-                      <option value="2"></option>
-                      <option value="3"></option>
-                    </select>
-                  </div>
-                  <div class="select-box__to">
-                    <label for="to">To</label>
-                    <select name="to" id="to">
-                      <option value="1">Lahore</option>
-                      <option value="2"></option>
-                      <option value="3"></option>
-                    </select>
-                  </div>
+                  <custom-select></custom-select>
+                </div>
+                <div class="select-box__trip">
+                  <custom-select-trip></custom-select-trip>
                 </div>
               </div>
             </div>
@@ -80,8 +68,22 @@
 
 
 <script>
+import customSelect from "@/components/customSelectFromTo.vue";
+import customSelectTrip from "@/components/customSelectTrip.vue";
   export default {
-    name:"Home"
+
+    name:"Home",
+    components:{
+      customSelect, customSelectTrip
+    },
+    data(){
+      return{
+        options: ['Option 1', 'Option 2', 'Option 3'], // Замените на свои опции
+        placeholder: 'Select place FROM', // Замените на свой заголовок по умолчанию
+        labelFrom: 'From', // Замените на свой лейбл
+        labelTo:'To',
+      }
+    }
   }
 </script>
 
