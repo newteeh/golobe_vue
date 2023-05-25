@@ -8,7 +8,7 @@
           </div>
           <div class="signup-section__body__right">
             <div class="signup-section__body__right__logo">
-              <img src="@/assets/img/Logo__black.png" alt="">
+              <router-link to="/"><img src="@/assets/img/Logo__black.png" alt=""></router-link>
             </div>
             <div class="signup-section__body__right__form-box">
               <div class="signup-section__body__right__form-box__title-box">
@@ -74,7 +74,7 @@
                   <a href="">Sign Up</a>
                 </div>
                 <div class="login-section__body__left__form-box__button-box__signup">
-                  <p>Already have an account? <span><a href="">Login</a></span></p>
+                  <p>Already have an account? <span><router-link to="/login">Login</router-link></span></p>
                 </div>
               </div>
             </div>

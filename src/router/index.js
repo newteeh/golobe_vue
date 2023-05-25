@@ -4,6 +4,7 @@ import customSelectFromTo from "@/components/customSelectFromTo.vue";
 import Login from "@/views/Login.vue";
 import Signup from "@/views/signup.vue";
 import SelectDatePicker from "@/components/SelectDatePicker.vue";
+import customSelectPassenegersClasses from "@/components/customSelectPassenegersClasses.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path:'/selectDatePicker',
       name:'SelectDatePicker',
       component:SelectDatePicker
+    },
+    {
+      path:'/selectPassengersClasses',
+      name:'selectPassengersClasses',
+      component:customSelectPassenegersClasses
     }
 
 

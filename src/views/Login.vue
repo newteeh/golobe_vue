@@ -5,7 +5,7 @@
         <div class="login-section__body">
           <div class="login-section__body__left">
             <div class="login-section__body__left__logo">
-              <img src="@/assets/img/Logo__black.png" alt="">
+              <router-link to="/"><img src="@/assets/img/Logo__black.png" alt=""></router-link>
             </div>
             <div class="login-section__body__left__form-box">
               <div class="login-section__body__left__form-box__title-box">
@@ -44,7 +44,7 @@
                   <a href="">Login</a>
                 </div>
                 <div class="login-section__body__left__form-box__button-box__signup">
-                  <p>Don’t have an account? <span><a href="">Sign up</a></span></p>
+                  <p>Don’t have an account? <span><router-link to="/signup">Sign up</router-link></span></p>
                 </div>
               </div>
             </div>

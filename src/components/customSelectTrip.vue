@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-select">
+  <div class="custom-select_trip">
     <label class="select-label">Trip</label>
     <div class="select-container">
       <div class="selected-item" @click="toggleDropdown">
@@ -23,7 +23,7 @@ export default {
       isOpen: false,
       selectedOption: '',
       options: ['Option 1', 'Option 2', 'Option 3'], // Замените на свои опции
-      placeholder: 'Select an option' // Замените на свой заголовок по умолчанию
+      placeholder: 'Select' // Замените на свой заголовок по умолчанию
     };
   },
   methods: {
@@ -39,17 +39,17 @@ export default {
 </script>
 
 <style scoped>
-.custom-select {
+.custom-select_trip {
   position: relative;
   display: inline-block;
-  padding: 15px 0 0 0;
   z-index: 1;
+  width: 140px;
 }
 
 .select-label {
   position: absolute;
   background: white;
-  bottom: 32px;
+  bottom: 50px;
   padding: 0 4px;
   left: 12px;
   z-index: 2;
@@ -73,7 +73,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 9px 16px 9px 16px;
+  padding: 18px 16px 18px 16px;
   cursor: pointer;
   background: #FFFFFF;
   border: 1px solid #79747E;

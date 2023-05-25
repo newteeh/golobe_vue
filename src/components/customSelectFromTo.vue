@@ -4,7 +4,7 @@
     <div class="select-container">
       <div class="selected-item" @click="toggleDropdown">
         <span>{{ selectedFrom ? selectedFrom + ' - ' : '' }}{{ selectedTo || placeholderTo }}</span>
-        <i class="arrow-down"></i>
+        <i style="margin: 0 20px 0 0 " class="arrow-down"></i>
       </div>
       <ul v-if="isOpen" class="dropdown-list">
         <li v-for="option in options" :key="option" @click="selectOption(option)">
@@ -47,14 +47,14 @@ export default {
 .custom-select {
   position: relative;
   display: inline-block;
-  padding: 15px 0 0 0;
   z-index: 1;
+  width: 324px;
 }
 
 .select-label {
   position: absolute;
   background: white;
-  bottom: 32px;
+  bottom: 50px;
   padding: 0 4px;
   left: 12px;
   z-index: 2;
@@ -78,11 +78,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 9px 16px 9px 16px;
+  padding: 18px 0 18px 16px;
   cursor: pointer;
   background: #FFFFFF;
   border: 1px solid #79747E;
   border-radius: 4px;
+  width: 100%;
 }
 
 .selected-item span {
