@@ -110,6 +110,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     line-height: 17px;
     color: #FFFFFF;
 }
+.login__link:hover{
+    color: #c2c2c2;
+    transition: 0.3s ease all;
+}
 .signup__link{
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -123,6 +127,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     padding: 15.5px 24px;
     background: #FFFFFF;
     border-radius: 8px;
+}
+.signup__link:hover{
+    background: #c2c2c2;
+    transition: 0.3s ease all;
 }
 
 
@@ -225,3 +233,305 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .select-box__to{
     z-index: 1;
 }
+
+
+
+
+/*login-section*/
+.login-section{
+
+}
+.login-section__body{
+    margin: 104px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+.login-section__body__left{
+    max-width: 512px;
+}
+.login-section__body__left__logo{
+    padding: 0 0 64px 0;
+}
+.login-section__body__left__form-box{
+
+}
+.login-section__body__left__form-box__title-box{
+
+}
+.login-section__body__left__form-box__title{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    padding: 0 0 16px 0;
+}
+.login-section__body__left__form-box__subtitle{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    opacity: 0.75;
+}
+.login-section__body__left__form-box__input-box{
+    padding: 33px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.login-section__body__left__form-box__input-box__email{
+    position: relative;
+}
+.login-section__body__left__form-box__input-box__password{
+    position: relative;
+}
+.input-label{
+    position: absolute;
+    left: 16px;
+    bottom: 50px;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1C1B1F;
+    padding: 0 4px;
+    background: white;
+}
+
+.login-section__body__left__form-box__input-box__email div{
+    max-width: 512px;
+}
+.login-section__body__left__form-box__input-box__password div{
+    max-width: 512px;
+}
+.main-input{
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #1C1B1F;
+    padding: 18px 0 18px 16px;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+}
+.login-section__body__left__form-box__input-box__remember{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-section__body__left__form-box__input-box__remember-box{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.forget-pass__link{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: right;
+    color: #FF8682;
+}
+.login-section__body__left__form-box__button-box{
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.login-section__body__left__form-box__button-box__login {
+    display: flex;
+    background: #9BE0C8;
+    border-radius: 4px;
+    padding: 15.5px 0 15px 0;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.login-section__body__left__form-box__button-box__login:hover{
+    transition: 0.3s ease all;
+    background: #8DD3BB;
+}
+.login-section__body__left__form-box__button-box__login a{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.login-section__body__left__form-box__button-box__signup{
+
+}
+.login-section__body__left__form-box__button-box__signup p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #112211;
+    text-align: center;
+}
+.login-section__body__left__form-box__button-box__signup p a{
+    color: #FF8682;
+}
+.login-section__body__left__form-box__different-login{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.login-section__body__left__form-box__different-login p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+    opacity: 0.5;
+}
+.login-section__body__left__form-box__different-login-box{
+    display: flex;
+    gap: 16px;
+    padding: 40px 0 0 0;
+}
+.login-section__body__left__form-box__different-login-box a{
+    padding: 16px 68px;
+    border: 1px solid #8DD3BB;
+    border-radius: 4px;
+}
+
+
+/*signup-section*/
+.signup-section{
+
+}
+.signup-section__body{
+    margin: 104px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.signup-section__body__left{
+    /*max-width: 488px;*/
+}
+.signup-section__body__left img{
+    object-fit: cover;
+    width: 488px;
+    height: 816px;
+}
+.signup-section__body__right{
+    width: 640px;
+}
+.signup-section__body__right__logo{
+
+}
+.signup-section__body__right__form-box__title-box{
+    display: flex;
+    flex-direction: column;
+    margin: 64px 0 0 0;
+}
+.signup-section__body__right__form-box__title{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    padding: 0 0 16px 0;
+}
+.signup-section__body__right__form-box__subtitle{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    opacity: 0.75;
+}
+.signup-section__body__right__form-box__input-box{
+    margin: 48px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.signup-section__body__right__form-box__input-box__personal{
+    display: flex;
+    max-width: 640px;
+    gap: 24px;
+
+}
+.signup-section__body__right__form-box__input-box__another{
+    display: flex;
+    max-width: 640px;
+    gap: 24px;
+}
+.signup-section__body__left__form-box__input-box__firstname{
+    position: relative;
+    width: 100%;
+}
+.signup-section__body__left__form-box__input-box__firstname div{
+    max-width: 616px;
+}
+.signup-section__body__left__form-box__input-box_lastname{
+    position: relative;
+    width: 100%;
+}
+.signup-section__body__left__form-box__input-box__lastname div{
+    max-width: 616px;
+}
+.signup-section__body__left__form-box__input-box__email{
+    position: relative;
+    width: 100%;
+}
+.signup-section__body__left__form-box__input-box__email div{
+    max-width: 616px;
+}
+.signup-section__body__left__form-box__input-box__phone{
+    position: relative;
+    width: 100%;
+}
+.signup-section__body__left__form-box__input-box__phone div{
+    max-width: 616px;
+}
+.signup-section__body__left__form-box__input-box__password{
+    position: relative;
+}
+.signup-section__body__left__form-box__input-box__password-confirm{
+    position: relative;
+}
+.signup-section__body__left__form-box__input-box__terms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.signup-section__body__left__form-box__input-box__terms-box{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.signup-section__body__left__form-box__input-box__terms-box label a{
+    color: #FF8682;
+}
+

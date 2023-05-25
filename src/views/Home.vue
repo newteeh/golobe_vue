@@ -16,8 +16,8 @@
           </div>
           <div class="main-page__header__body__logo"><img src="@/assets/img/Logo.png"/></div>
           <div class="main-page__header__body__right">
-            <a href="" class="login__link">Login</a>
-            <a href="" class="signup__link">Sign up</a>
+            <router-link to="/login" class="login__link">Login</router-link>
+            <router-link to="/signup"  class="signup__link">Sign up</router-link>
           </div>
         </div>
         <div class="main-page__title-box">
