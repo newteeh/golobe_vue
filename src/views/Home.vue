@@ -264,38 +264,7 @@
           </div>
         </div>
       </div>
-      <footer class="main-page__footer">
-        <div class="small-container">
-          <div class="main-page__footer__body">
-            <div class="main-page__footer__subscribe-box">
-              <div class="main-page__footer__subscribe-box__body">
-                <div class="main-page__footer__subscribe-box__body__left">
-                  <div class="main-page__footer__subscribe-box__body__left__title-box">
-                    <div class="main-page__footer__subscribe-box__body__left__title">
-                      Subscribe Newsletter
-                    </div>
-                    <div class="main-page__footer__subscribe-box__body__left__subtitle">
-                      <div class="main-page__footer__subscribe-box__body__left__subtitle__head">
-                        The Travel
-                      </div>
-                      <div class="main-page__footer__subscribe-box__body__left__subtitle__bottom">
-                        Get inspired! Receive travel discounts, tips and behind the scenes stories.
-                      </div>
-                    </div>
-                  </div>
-                  <div class="main-page__footer__subscribe-box__body__left__input-box">
-                    <input placeholder="Your email address" name="email" type="text">
-                    <a href="" class="main-button__black">Subscribe</a>
-                  </div>
-                </div>
-                <div class="main-page__footer__subscribe-box__body__right">
-                  <img src="@/assets/img/footer__img.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer></Footer>
     </div>
   </div>
 </template>
@@ -306,11 +275,13 @@ import customSelect from "@/components/customSelectFromTo.vue";
 import customSelectTrip from "@/components/customSelectTrip.vue";
 import SelectDatePicker from "@/components/SelectDatePicker.vue";
 import customSelectPassenegersClasses from "@/components/customSelectPassenegersClasses.vue";
+import Footer from "@/components/Footer.vue";
+
   export default {
 
     name:"Home",
     components:{
-      customSelect, customSelectTrip,SelectDatePicker,customSelectPassenegersClasses
+      customSelect, customSelectTrip,SelectDatePicker,customSelectPassenegersClasses,Footer
     },
     data(){
       return{

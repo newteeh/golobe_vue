@@ -406,11 +406,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     background: url("@/assets/img/main_page_category1.png");
     width: 604px;
     text-align: center;
+    background-repeat: no-repeat;
 }
 .main-page__categories__body__right{
     background: url("@/assets/img/main_page_category2.png");
     width: 604px;
     text-align: center;
+    background-repeat: no-repeat;
+
 }
 .main-page__categories__body__left__title-box{
     text-align: center;
@@ -441,7 +444,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .main-page__categories__body__left__button {
     display: flex;
     justify-content: center;
-    padding: 16px 0 24px 0;
+    padding: 16px 0 44px 0;
 }
 .main-page__categories__body__left__button a{
     font-family: 'Montserrat',sans-serif;
@@ -468,7 +471,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .main-page__footer__subscribe-box__body{
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0px 24px 0 24px;
 }
 .main-page__footer__subscribe-box__body__left{
@@ -477,6 +479,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .main-page__footer__subscribe-box__body__left__title-box{
     display: flex;
     flex-direction: column;
+    padding: 24px 0 0 0;
 }
 .main-page__footer__subscribe-box__body__left__title{
     font-family: 'Inter', sans-serif;
@@ -514,7 +517,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     display: flex;
     gap: 16px;
 }
-.main-page__footer__subscribe-box__body__left__input-box input[type='text']{
+.main-page__footer__subscribe-box__body__left__input-box input[type='email']{
     padding: 18px 0 18px 16px;
     background: #FFFFFF;
     border-radius: 4px;
@@ -537,8 +540,256 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     border-radius: 4px;
 }
 
+.main-page__footer__bottom{
+    padding: 100px 0 64px 0;
+
+}
+.main-page__footer__bottom__body{
+    display: flex;
+    justify-content: space-between;
+}
+.main-page__footer__bottom__left{
+
+}
+.footer__logo{
+    padding: 0 0 24px 0;
+}
+.main-page__footer__bottom__left__icons{
+    display: flex;
+    gap: 12px;
+}
+.main-page__footer__bottom__lists-box{
+    display: flex;
+    gap: 24px;
+}
+.main-page__footer__bottom__list{
+    width: 175.2px;
+}
+.main-page__footer__bottom__list__title{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    padding:  0 0 16px 0;
+}
+.main-page__footer__bottom__list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+.main-page__footer__bottom__list a{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #112211;
+    opacity: 0.7;
+}
+
+/*Account*/
+.header{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+}
+.header__body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 0;
+}
+.header__body__left{
+    display: flex;
+    gap: 32px;
+}
+.header__body__left div{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.header__body__left a{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.header__body__right{
+    display: flex;
+    gap: 54px;
+
+}
+.header__favourites-link{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.header__favourites-link p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.header__profile-link{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.header__profile-link p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.account__main-block{
+
+}
+.account__main-block__body{
+
+    padding: 48px 0 0 0;
+}
+.account__main-block__banner{
+    background: url("@/assets/img/account__banner.png");
+    width: 100%;
+    height: 350px;
+    position: relative;
+
+}
+.account__main-block__banner label{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+}
+.account__main-block__banner p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.account__main-block__body_info{
+    position: relative;
 
 
+}
+.account__main-block__body_info__avatar-box{
+    position: absolute;
+    /*position: relative;*/
+    width: 160px;
+    height: 160px;
+    top: -50px;
+    left: 40%;
+}
+.image-box{
+    width: 160px;
+    height: 160px;
+}
+.image-box img{
+    width: 100%;
+}
+.account__main-block__body_info__avatar-box label{
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    right: 15px;
+}
+.account__main-block__body_info__avatar-box label img{
+    background: #FF8682;
+    border-radius: 45px;
+    padding: 10px;
+}
+.account__main-block__body_info__text-box{
+    position: absolute;
+    left: 40%;
+    text-align: center;
+    padding: 100px 0 0 0;
+}
+.account__main-block__body_info__name{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #112211;
+}
+.account__main-block__body_info__email{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #112211;
+    opacity: 0.75;
+}
+
+.account__main-block__body_info__personal{
+    padding: 203px 0 0 0;
+}
+.account__main-block__body_info__personal__menu{
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    border-radius: 12px;
+    justify-content: space-between;
+    padding: 16px 24px;
+}
+.account__main-block__body_info__personal__menu__account-box{
+    display: flex;
+    align-items: center;
+
+}
+.account__main-block__body_info__personal__menu__account-box label{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+
+
+
+}
+.account__main-block__body_info__personal__menu__history-box{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.account__main-block__body_info__personal__menu__history-box label{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+}
+
+.account__main-block__body_info__personal__menu__payment-methods-box{
+    display: flex;
+    align-items: center;
+
+
+}
+.account__main-block__body_info__personal__menu__payment-methods-box label{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+}
 
 
 
