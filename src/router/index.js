@@ -6,6 +6,8 @@ import Signup from "@/views/signup.vue";
 import SelectDatePicker from "@/components/SelectDatePicker.vue";
 import customSelectPassenegersClasses from "@/components/customSelectPassenegersClasses.vue";
 import Account from "@/views/Account.vue";
+import flightsSearch from "@/views/flightsSearch.vue";
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -44,7 +46,13 @@ const router = createRouter({
       path:'/account',
       name:'Account',
       component:Account
+    },
+    {
+      path:'/search/flights',
+      name:'flightsSearch',
+      component:flightsSearch
     }
+
 
 
 

@@ -104,7 +104,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     align-items: center;
     gap: 32px;
 }
-.login__link{
+.header__body__right__login{
+    gap: 32px;
+}
+
+.login__link__white{
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -112,11 +116,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     line-height: 17px;
     color: #FFFFFF;
 }
-.login__link:hover{
+.login__link__black{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+.login__link__white:hover{
     color: #c2c2c2;
     transition: 0.3s ease all;
 }
-.signup__link{
+.signup__link__white{
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -128,6 +140,20 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     color: #112211;
     padding: 15.5px 24px;
     background: #FFFFFF;
+    border-radius: 8px;
+}
+.signup__link__black{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 15.5px 24px;
+    background: #112211;
     border-radius: 8px;
 }
 .signup__link:hover{
@@ -186,6 +212,15 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*main-page__search-menu*__body__form__up*/
 .main-page__search-menu__body__form__up{
     display: flex;
+}
+.main-page__search-menu__body__form__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #112211;
+    padding: 5px 0 0 0;
 }
 .main-page__search-menu__body__form__up__flights-box{
     display: flex;
@@ -270,11 +305,37 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     background: #9BE0C8;
     border-radius: 4px;
     align-items: center;
-    max-width: 144px;
     color: #1C1B1F;
+    justify-content: center;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+
+}
+.main-button__white{
+    display: flex;
+    gap: 4px;
+    padding: 15.5px 16px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    align-items: center;
+    color: #1C1B1F;
+    justify-content: center;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
 }
 .main-button:hover{
     background: #8DD3BB;
+}
+.main-button__white:hover{
+    background: #dedede;
 }
 
 
@@ -458,7 +519,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 /*main-page__footer*/
 .main-page__footer{
-    margin: 90px 0 0 0;
+    margin: 120px 0 0 0;
 }
 .main-page__footer__body{
 
@@ -527,10 +588,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
-
-
     color: #1C1B1F;
-
 
 }
 .main-page__footer__subscribe-box__body__left__input-box a{
@@ -586,7 +644,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-
     color: #112211;
     opacity: 0.7;
 }
@@ -595,6 +652,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 .header{
     background: #FFFFFF;
     box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    position: fixed;
+    width: 100%;
+    z-index: 5;
 }
 .header__body{
     display: flex;
@@ -662,6 +722,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     width: 100%;
     height: 350px;
     position: relative;
+    margin: 80px 0 0 0;
 
 }
 .account__main-block__banner label{
@@ -745,6 +806,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     border-radius: 12px;
     justify-content: space-between;
     padding: 16px 24px;
+
 }
 .account__main-block__body_info__personal__menu__account-box{
     display: flex;
@@ -790,7 +852,257 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     line-height: 20px;
     color: #112211;
 }
+.account__main-block__body_info__personal__information{
+    margin: 40px 0 0 0;
+}
+.account__main-block__body_info__personal__information-title{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #000000;
+    padding: 0 0 16px 0;
+}
+.account__main-block__body_info__personal__information-block{
 
+}
+.account__main-block__body_info__personal__information-block__body{
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    border-radius: 16px;
+
+}
+.account__main-block__body_info__personal__information-block__field{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.account__main-block__body_info__personal__information-block__text-box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.account__main-block__body_info__personal__information-block__text-box label{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    opacity: 0.75;
+
+}
+.account__main-block__body_info__personal__information-block__text-box p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #112211;
+}
+
+
+/*flights-search*/
+.flights-search__main{
+    background: url("@/assets/img/search-flights__bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0 0 0 ;
+}
+.flights-search__main__body{
+
+}
+.flights-search__main__body__title-box{
+    padding: 80px 0 254px 25px ;
+}
+.flights-search__main__body__title{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 57px;
+    color: #FFFFFF;
+    max-width: 440px;
+    padding: 0 0 8px 0;
+}
+.flights-search__main__body__subtitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.flights-search__offers{
+    margin: 230px 0 80px 0;
+}
+.flights-search__offers__body{
+
+}
+.flights-search__offers__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 40px 0;
+
+}
+.flights-search__offers__header__text-box{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.flights-search__offers__header__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+}
+.flights-search__offers__header__subtitle{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    max-width: 851px;
+}
+.flights-search__offers__cards-box{
+    display: flex;
+    justify-content: space-between;
+}
+.flights-search__offers__card{
+    background: url("@/assets/img/card_bg.png") ;
+    width: 296px;
+}
+.flights-search__offers__card__body{
+    padding: 286px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.flights-search__offers__card__text-box{
+    display: flex;
+    justify-content: space-between;
+}
+.flights-search__offers__card__title-box{
+    display: flex;
+    flex-direction: column;
+
+}
+.flights-search__offers__card__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+.flights-search__offers__card__subtitle{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+.flights-search__offers__card__price{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.flights-search__other-offer__main-box{
+    display: flex;
+    justify-content: space-between;
+
+}
+.flights-search__other-offer__main-box__left{
+    background: #8DD3BB;
+    border-radius: 20px;
+    max-width: 552px;
+}
+.flights-search__other-offer__main-box__left__body{
+    padding: 24px 24px 21px 24px;
+
+}
+.flights-search__other-offer__main-box__left__text-box{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.flights-search__other-offer__main-box__left__text-box__up{
+    display: flex;
+    justify-content: space-between;
+}
+.flights-search__other-offer__main-box__left__title{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    color: #112211;
+    max-width: 363px;
+}
+.flights-search__other-offer__main-box__left__price{
+    text-align: center;
+    padding: 8px;
+    background: white;
+    max-height: 62px;
+    border-radius: 8px;
+}
+.flights-search__other-offer__main-box__left__price span{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #112211;
+}
+.flights-search__other-offer__main-box__left__price p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #112211;
+}
+.flights-search__other-offer__main-box__left__text-box__bottom{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+    padding:  0 0 120px 0;
+}
+.flights-search__other-offer__main-box__right{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.flights-search__other-offer__main-box__right__up{
+    display: flex;
+    gap: 20px;
+}
+.flights-search__other-offer__main-box__right__bottom{
+    display: flex;
+    gap: 20px;
+
+}
+.flights-search__other-offer__main-box__right__img{
+    border: 2px solid #8DD3BB;
+    border-radius: 12px;
+}
 
 
 
@@ -857,6 +1169,9 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     padding: 0 4px;
     background: white;
 }
+.input-label:focus{
+    color: #8DD3BB;
+}
 
 .login-section__body__left__form-box__input-box__email div{
     max-width: 512px;
@@ -877,6 +1192,21 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     padding: 18px 0 18px 16px;
     background: #FFFFFF;
     border: 1px solid #79747E;
+    border-radius: 4px;
+}
+.main-input:focus{
+    font-family: 'Montserrat',sans-serif;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #1C1B1F;
+    padding: 18px 0 18px 16px;
+    background: #FFFFFF;
+    border: 2px solid #8DD3BB;
     border-radius: 4px;
 }
 .login-section__body__left__form-box__input-box__remember{

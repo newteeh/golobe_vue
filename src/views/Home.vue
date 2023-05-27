@@ -16,8 +16,8 @@
           </div>
           <div class="main-page__header__body__logo"><img src="@/assets/img/Logo.png"/></div>
           <div class="main-page__header__body__right">
-            <router-link to="/login" class="login__link">Login</router-link>
-            <router-link to="/signup"  class="signup__link">Sign up</router-link>
+            <router-link to="/login" class="login__link__white">Login</router-link>
+            <router-link to="/signup"  class="signup__link__white">Sign up</router-link>
           </div>
         </div>
         <div class="main-page__title-box">
@@ -66,7 +66,6 @@
               <div class="main-page__search-menu__body__form__bottom">
                 <a href="" class="">+ Add Promo Code</a>
                 <a class="main-button" href=""><img src="@/assets/icons/paper_plane.png"/>Show Flights</a>
-
               </div>
             </div>
           </div>
@@ -276,6 +275,7 @@ import customSelectTrip from "@/components/customSelectTrip.vue";
 import SelectDatePicker from "@/components/SelectDatePicker.vue";
 import customSelectPassenegersClasses from "@/components/customSelectPassenegersClasses.vue";
 import Footer from "@/components/Footer.vue";
+
 
   export default {
 

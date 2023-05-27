@@ -58,19 +58,105 @@
                   <input style="opacity: 0"  type="radio" id="payment-methods" name="search__category">
                 </div>
             </div>
+            <div class="account__main-block__body_info__personal__information">
+              <div class="account__main-block__body_info__personal__information-title">
+                Account
+              </div>
+              <div class="account__main-block__body_info__personal__information-block">
+                <div class="account__main-block__body_info__personal__information-block__body">
+                  <div class="account__main-block__body_info__personal__information-block__field">
+                    <div class="account__main-block__body_info__personal__information-block__text-box">
+                      <label for="name">Name</label>
+                      <p>John Doe.</p>
+                      <input style="display: none" type="text" id="name">
+                    </div>
+                    <div class="account__main-block__body_info__personal__information-block__btn">
+                      <a href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</a>
+                    </div>
+                  </div>
+
+                  <div class="account__main-block__body_info__personal__information-block__field">
+                    <div class="account__main-block__body_info__personal__information-block__text-box">
+                      <label for="email">Email</label>
+                      <p>john.doe@gmail.com</p>
+                      <input style="display: none" type="text" id="email">
+                    </div>
+                    <div class="account__main-block__body_info__personal__information-block__btn">
+                      <a href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</a>
+                    </div>
+                  </div>
+
+                  <div class="account__main-block__body_info__personal__information-block__field">
+                    <div class="account__main-block__body_info__personal__information-block__text-box">
+                      <label for="password">Password</label>
+                      <p>************</p>
+                      <input style="display: none" type="text" id="password">
+                    </div>
+                    <div class="account__main-block__body_info__personal__information-block__btn">
+                      <a href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</a>
+                    </div>
+                  </div>
+
+                  <div class="account__main-block__body_info__personal__information-block__field">
+                    <div class="account__main-block__body_info__personal__information-block__text-box">
+                      <label for="phone">Phone number</label>
+                      <p>+1 000-000-0000</p>
+                      <input style="display: none" type="text" id="phone">
+                    </div>
+                    <div class="account__main-block__body_info__personal__information-block__btn">
+                      <a href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</a>
+                    </div>
+                  </div>
+
+                  <div class="account__main-block__body_info__personal__information-block__field">
+                    <div class="account__main-block__body_info__personal__information-block__text-box">
+                      <label for="address">Address</label>
+                      <p>St 32 main downtown, Los Angeles, California, USA</p>
+                      <input style="display: none" type="text" id="address">
+                    </div>
+                    <div class="account__main-block__body_info__personal__information-block__btn">
+                      <a href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</a>
+                    </div>
+                  </div>
+
+                  <div class="account__main-block__body_info__personal__information-block__field">
+                    <div class="account__main-block__body_info__personal__information-block__text-box">
+                      <label for="date-of-birth">Date of birth</label>
+                      <p>01-01-1992</p>
+                      <input style="display: none" type="text" id="date-of-birth">
+                    </div>
+                    <div class="account__main-block__body_info__personal__information-block__btn">
+                      <a href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</a>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "Account",
-  components:{Header}
+  components:{Footer, Header}
 }
 </script>
 
