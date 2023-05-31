@@ -689,6 +689,19 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     align-items: center;
     gap: 4px;
 }
+.header__favourites-link__white{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.header__favourites-link__white p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+}
 .header__favourites-link p{
     font-family: 'Montserrat',sans-serif;
     font-style: normal;
@@ -702,6 +715,11 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     align-items: center;
     gap: 4px;
 }
+.header__profile-link__white{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 .header__profile-link p{
     font-family: 'Montserrat',sans-serif;
     font-style: normal;
@@ -709,6 +727,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     font-size: 14px;
     line-height: 17px;
     color: #112211;
+}
+.header__profile-link__white p{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
 }
 .account__main-block{
 
@@ -797,7 +823,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 .account__main-block__body_info__personal{
-    padding: 203px 0 0 0;
+    padding: 100px 0 0 0;
 }
 .account__main-block__body_info__personal__menu{
     display: flex;

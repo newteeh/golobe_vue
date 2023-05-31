@@ -7,7 +7,7 @@
           <div class="main-page__header__body__left">
             <div>
               <img src="@/assets/icons/airplane.png"/>
-              <a href="" class="">Find Flight</a>
+              <router-link to="/search/flights" class="">Find Flight</router-link>
             </div>
             <div>
               <img src="@/assets/icons/ion_bed.png"/>
@@ -16,8 +16,19 @@
           </div>
           <div class="main-page__header__body__logo"><img src="@/assets/img/Logo.png"/></div>
           <div class="main-page__header__body__right">
-            <router-link to="/login" class="login__link__white">Login</router-link>
-            <router-link to="/signup"  class="signup__link__white">Sign up</router-link>
+            <div v-if="inStorage"  style="display: flex" class="header__body__right__login">
+              <router-link to="/account" class="header__favourites-link__white">
+                <img src="@/assets/icons/heart__black.png" alt="">
+                <p>Favourites</p>
+              </router-link>
+              <router-link to="/account"  class="header__profile-link__white">
+                <p>John D.</p>
+              </router-link>
+            </div>
+            <div v-if="!inStorage" style="display: flex; gap: 32px;align-items: center" class="header__body__right__logout">
+              <router-link to="/login" class="login__link__white">Login</router-link>
+              <router-link to="/signup"  class="signup__link__white">Sign up</router-link>
+            </div>
           </div>
         </div>
         <div class="main-page__title-box">
@@ -289,7 +300,14 @@ import Footer from "@/components/Footer.vue";
         placeholder: 'Select place FROM', // Замените на свой заголовок по умолчанию
         labelFrom: 'From', // Замените на свой лейбл
         labelTo:'To',
+        inStorage:false,
       }
+    },
+    mounted() {
+      if (localStorage.getItem('user')){
+        this.inStorage = true
+      }
+      else this.inStorage = false
     }
   }
 </script>
