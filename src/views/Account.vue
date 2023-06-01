@@ -59,16 +59,17 @@
                 </div>
             </div>
             <div class="account__main-block__body_info__personal__information">
-              <div class="account__main-block__body_info__personal__information-title">
-                Account
+              <div style="display: flex; justify-content: space-between" class="account__main-block__body_info__personal__information-title">
+                <p>Account</p>
+                <button @click="logout" style="background: #ff8686" class="main-button">Выйти</button>
               </div>
               <div class="account__main-block__body_info__personal__information-block">
                 <div class="account__main-block__body_info__personal__information-block__body">
                   <div class="account__main-block__body_info__personal__information-block__field">
                     <div class="account__main-block__body_info__personal__information-block__text-box">
                       <label for="name">Name</label>
-                      <p v-if="!editingName">John Doe.</p>
-                      <input v-else type="text" id="name">
+                      <p v-if="!editingName">{{userData.firstname}} {{userData.lastname}}</p>
+                      <input style="padding: 5px" class="main-input" v-model="newFullname" v-else type="text" id="name">
                     </div>
                     <div class="account__main-block__body_info__personal__information-block__btn">
                       <button v-on:click="toggleEdit(1)" href="" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</button>
@@ -78,8 +79,8 @@
                   <div class="account__main-block__body_info__personal__information-block__field">
                     <div class="account__main-block__body_info__personal__information-block__text-box">
                       <label for="email">Email</label>
-                      <p v-if="!editingEmail">john.doe@gmail.com</p>
-                      <input v-else type="text" id="email">
+                      <p v-if="!editingEmail">{{userData.email}}</p>
+                      <input style="padding: 5px" class="main-input" v-model="newEmail" v-else type="text" id="email">
                     </div>
                     <div class="account__main-block__body_info__personal__information-block__btn">
                       <button v-on:click="toggleEdit(2)" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</button>
@@ -89,8 +90,8 @@
                   <div class="account__main-block__body_info__personal__information-block__field">
                     <div class="account__main-block__body_info__personal__information-block__text-box">
                       <label for="password">Password</label>
-                      <p v-if="!editingPassword">************</p>
-                      <input v-else type="text" id="password">
+                      <p v-if="!editingPassword">{{userData.password}}</p>
+                      <input style="padding: 5px" class="main-input" v-model="newPassword" v-else type="text" id="password">
                     </div>
                     <div class="account__main-block__body_info__personal__information-block__btn">
                       <button v-on:click="toggleEdit(3)" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</button>
@@ -100,8 +101,8 @@
                   <div class="account__main-block__body_info__personal__information-block__field">
                     <div class="account__main-block__body_info__personal__information-block__text-box">
                       <label for="phone">Phone number</label>
-                      <p v-if="!editingPhone">+1 000-000-0000</p>
-                      <input v-else type="text" id="phone">
+                      <p v-if="!editingPhone">{{userData.phone}}</p>
+                      <input style="padding: 5px" class="main-input" v-model="newPhone" v-else type="text" id="phone">
                     </div>
                     <div class="account__main-block__body_info__personal__information-block__btn">
                       <button @click="toggleEdit(4)" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</button>
@@ -111,8 +112,8 @@
                   <div class="account__main-block__body_info__personal__information-block__field">
                     <div class="account__main-block__body_info__personal__information-block__text-box">
                       <label for="address">Address</label>
-                      <p v-if="!editingAddress">St 32 main downtown, Los Angeles, California, USA</p>
-                      <input v-else type="text" id="address">
+                      <p v-if="!editingAddress">{{userData.address ?? "Укажите адрес"}}</p>
+                      <input style="padding: 5px" class="main-input" v-model="newAddress" v-else type="text" id="address">
                     </div>
                     <div class="account__main-block__body_info__personal__information-block__btn">
                       <button @click="toggleEdit(5)" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</button>
@@ -122,15 +123,15 @@
                   <div class="account__main-block__body_info__personal__information-block__field">
                     <div class="account__main-block__body_info__personal__information-block__text-box">
                       <label for="date-of-birth">Date of birth</label>
-                      <p v-if="!editingBirthdate">01-01-1992</p>
-                      <input v-else type="date" id="date-of-birth">
+                      <p v-if="!editingBirthdate">{{userData.birthdate ?? "Укажите дату рождения"}}</p>
+                      <input style="padding: 5px" class="main-input" v-model="newBirthdate" v-else type="date" id="date-of-birth">
                     </div>
                     <div class="account__main-block__body_info__personal__information-block__btn">
                       <button @click="toggleEdit(6)" class="main-button-bordered"><img src="@/assets/icons/edit.png" alt="">Change</button>
                     </div>
                   </div>
                   <div v-if="isFormValid" style="margin: 0 auto;" class="account__main-block__body_info__personal__information-saveEdit">
-                    <button style="background: #8DD3BB"  class="main-button-bordered">Save edit</button>
+                    <button style="background: #8DD3BB" @click="SaveUpdate" class="main-button-bordered">Save edit</button>
                   </div>
                 </div>
               </div>
@@ -158,7 +159,17 @@ export default {
       editingPassword:false,
       editingPhone:false,
       editingAddress:false,
-      editingBirthdate:false
+      editingBirthdate:false,
+      userData:{
+
+      },
+      newFullname:null,
+      newEmail:null,
+      newPassword:null,
+      newPhone:null,
+      newAddress:null,
+      newBirthdate:null
+
 
     }
   },
@@ -187,11 +198,45 @@ export default {
 
       this.editingName = !this.editingName;
     },
+    logout(){
+      localStorage.removeItem('user')
+      this.$router.push('/')
+    },
+    SaveUpdate(){
+      fetch('http://golobeapi/routes/updateInfo.php',{
+        method: 'POST',
+        body:JSON.stringify({
+          id: this.userData.id,
+          firstname: this.newFullname.split(' ')[0] ?? this.userData.firstname,
+          lastname:this.newFullname.split(' ')[1] ? this.newFullname.split(' ')[1] : this.userData.lastname,
+          email:this.newEmail ?? this.userData.email,
+          password:this.newPassword ?? this.userData.password,
+          phone:this.newPhone ?? this.userData.phone,
+          address:this.newAddress ?? this.userData.address,
+          birthdate:this.newBirthdate ?? this.userData.birthdate,
+        }),
+      })
+          .then((response) => response.json()) // парсим ответ от сервера в формате JSON
+          .then((data) => {
+            if(data.success === true) {
+              this.logout()
+            }
+
+          })
+          .catch((error) => console.error(error)); // ловим ошибки сети и выводим в консоль
+    }
   },
   computed:{
     isFormValid() {
       return this.editingName || this.editingEmail || this.editingPassword || this.editingPhone || this.editingAddress || this.editingBirthdate;
     },
+  },
+  mounted() {
+    this.userData = JSON.parse(localStorage.getItem('user'))
+    if(!localStorage.getItem('user')){
+      this.$router.push("/")
+    }
+    console.log(this.userData)
   }
 }
 </script>

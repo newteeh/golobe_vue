@@ -22,7 +22,7 @@
                 <p>Favourites</p>
               </router-link>
               <router-link to="/account"  class="header__profile-link__white">
-                <p>John D.</p>
+                <p>{{userData.firstname}} {{userData.lastname.charAt(0)}}.</p>
               </router-link>
             </div>
             <div v-if="!inStorage" style="display: flex; gap: 32px;align-items: center" class="header__body__right__logout">
@@ -301,11 +301,15 @@ import Footer from "@/components/Footer.vue";
         labelFrom: 'From', // Замените на свой лейбл
         labelTo:'To',
         inStorage:false,
+        userData:{
+
+        }
       }
     },
     mounted() {
       if (localStorage.getItem('user')){
         this.inStorage = true
+        this.userData = JSON.parse(localStorage.getItem('user'))
       }
       else this.inStorage = false
     }

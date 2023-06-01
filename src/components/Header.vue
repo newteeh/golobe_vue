@@ -20,8 +20,12 @@
               <p>Favourites</p>
             </router-link>
             <router-link to="/account"  class="header__profile-link">
-              <p>John D.</p>
+              <p>{{userData.firstname}} {{userData.lastname.charAt(0)}}.</p>
             </router-link>
+            <router-link v-if="userData.status ==='1'" to="/adminPanel" class="header__profile-link">
+              <p>Админ.панель</p>
+            </router-link>
+
           </div>
           <div v-if="!inStorage" style="display: flex; gap: 32px;align-items: center" class="header__body__right__logout">
             <router-link to="/login" class="login__link__black">Login</router-link>
@@ -39,12 +43,16 @@ export default {
   data(){
     return{
       inStorage:false,
+      userData:{
+
+      }
 
     }
   },
   mounted() {
     if (localStorage.getItem('user')){
       this.inStorage = true
+      this.userData = JSON.parse(localStorage.getItem('user'))
     }
     else this.inStorage = false
   }
