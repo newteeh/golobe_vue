@@ -1,47 +1,113 @@
 <template>
-  <div class="custom-select">
-    <label class="select-label">From - To</label>
-    <div class="select-container">
-      <div class="selected-item" @click="toggleDropdown">
-        <span>{{ selectedFrom ? selectedFrom + ' - ' : '' }}{{ selectedTo || placeholderTo }}</span>
-        <i style="margin: 0 20px 0 0 " class="arrow-down"></i>
-      </div>
-      <ul v-if="isOpen" class="dropdown-list">
-        <li v-for="option in options" :key="option" @click="selectOption(option)">
-          {{ option }}
-        </li>
-      </ul>
+  <div style="display: flex; gap: 15px" class="custom-selectBox">
+  <div style="width: 150px" class="custom-select">
+    <label class="input-label" for="selectFrom">From</label>
+    <select v-model="selectedFrom" class="main-input" name="" id="selectFrom" @change="updateSelectedFrom">
+      <option v-for="item in options" :value="item.id">{{item.name}}</option>
+    </select>
+  </div>
+    <div style="width: 150px" class="custom-select">
+      <label class="input-label" for="selectTo">To</label>
+      <select v-model="selectedTo" class="main-input" name="" id="selectTo" @change="updateSelectedTo">
+        <option v-for="item in options" :value="item.id">{{item.name}}</option>
+      </select>
     </div>
   </div>
 </template>
 
 <script>
+import {useCityStore} from "@/store/cityStore.js";
 export default {
   data() {
     return {
       isOpen: false,
       selectedFrom: '',
       selectedTo: '',
-      options: ['New York', 'London', 'Paris', 'Tokyo', 'Sydney'], // Замените на свои опции
-      placeholderTo: 'Select place TO', // Замените на свой заголовок по умолчанию
-      placeholderFrom: 'Select place FROM'
+      options: [], // Замените на свои опции
+      flights: [], // Замените на свои данные о полетах
     };
   },
   methods: {
     toggleDropdown() {
       this.isOpen = !this.isOpen;
     },
-    selectOption(option) {
-      if (!this.selectedFrom) {
-        this.selectedFrom = option;
-      } else {
-        this.selectedTo = option;
-        this.isOpen = false;
-      }
-    }
+    // selectOption(option) {
+    //   // if (!this.selectedFrom) {
+    //   //   this.selectedFrom = option.name;
+    //   // } else {
+    //   //   this.selectedTo = option.name;
+    //   //   this.isOpen = false;
+    //    this.selectedFrom = option;
+    //    this.$emit('option-selected', option)
+    //   },
+    updateSelectedFrom(){
+      const cityStore = useCityStore();
+      cityStore.setSelectedFrom(this.selectedFrom)
+    },
+    updateSelectedTo(){
+      const cityStore = useCityStore();
+      cityStore.setSelectedTo(this.selectedTo)
+    },
+    },
+
+  computed: {
+    // filteredFlights() {
+    //   if (this.selectedFrom && this.selectedTo) {
+    //     return this.flights.filter(
+    //         flight =>
+    //             flight.departure_city === this.selectedFrom &&
+    //             flight.arrival_city === this.selectedTo
+    //     );
+    //   } else {
+    //     return this.flights;
+    //   }
+    // }
+  },
+  watch: {
+    // selectedOption(){
+    //   fetch('http://golobeapi/routes/getFlights.php', {
+    //     method: 'POST',
+    //     body:JSON.stringify({
+    //       id_trips:this.selectedOption,
+    //       departure_city:this.selectedFrom,
+    //       arrival_city:this.selectedTo,
+    //     })
+    //   })
+    //       .then(response => response.json())
+    //       .then(data => {
+    //         if (data.success === true) {
+    //           this.flights = data.flightData || [];
+    //         }
+    //       })
+    //       .catch(error => console.error(error));
+    // }
+},
+mounted() {
+  fetch('http://golobeapi/routes/getCities.php', {
+    method: 'GET',
+  })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success === true) {
+          this.options = data['cityData'].cityData;
+        }
+      })
+      .catch(error => console.error(error));
+
+  // fetch('http://golobeapi/routes/getFlightsFiltered.php', {
+  //   method: 'GET',
+  // })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       if (data.success === true) {
+  //         this.flights = data.flightData || [];
+  //       }
+  //     })
+  //     .catch(error => console.error(error));
   }
-};
+}
 </script>
+
 
 <style>
 .custom-select {

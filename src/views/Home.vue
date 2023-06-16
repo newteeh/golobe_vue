@@ -63,12 +63,18 @@
               <div class="main-page__search-menu__body__form__middle">
                 <div class="select-box__from-to">
                   <custom-select></custom-select>
+                  <p style="display: none">{{selectedFrom}}</p>
+                  <p style="display: none">{{selectedTo}}</p>
                 </div>
                 <div class="select-box__trip">
                   <custom-select-trip></custom-select-trip>
+                  <p style="display: none">{{selectedOption}}</p>
                 </div>
                 <div class="select-box__date">
                   <select-date-picker></select-date-picker>
+                  <p style="display: none">{{departDate}}</p>
+                  <p style="display: none">{{arrivalDate}}</p>
+
                 </div>
                 <div class="select-box__class">
                   <custom-select-passenegers-classes></custom-select-passenegers-classes>
@@ -76,7 +82,7 @@
               </div>
               <div class="main-page__search-menu__body__form__bottom">
                 <a href="" class="">+ Add Promo Code</a>
-                <a class="main-button" href=""><img src="@/assets/icons/paper_plane.png"/>Show Flights</a>
+                <div class="main-button" @click="search" ><img src="@/assets/icons/paper_plane.png"/>Show Flights</div>
               </div>
             </div>
           </div>
@@ -255,7 +261,7 @@
                 </div>
               </div>
               <div class="main-page__categories__body__left__button">
-                <a class="main-button" href=""><img src="@/assets/icons/paper_plane.png" alt="">Show Flights</a>
+                <router-link to="/flightListing" class="main-button" href=""><img src="@/assets/icons/paper_plane.png" alt="">Show Flights</router-link>
               </div>
             </div>
             <div class="main-page__categories__body__right">
@@ -264,7 +270,8 @@
                   Hotels
                 </div>
                 <div class="main-page__categories__body__left__subtitle">
-                  Search hotels & Places Hire to our most popular destinations                </div>
+                  Search hotels & Places Hire to our most popular destinations
+                </div>
               </div>
               <div class="main-page__categories__body__left__button">
                 <a class="main-button" href=""><img src="@/assets/icons/paper_plane.png" alt="">Show Hotels</a>
@@ -286,9 +293,12 @@ import customSelectTrip from "@/components/customSelectTrip.vue";
 import SelectDatePicker from "@/components/SelectDatePicker.vue";
 import customSelectPassenegersClasses from "@/components/customSelectPassenegersClasses.vue";
 import Footer from "@/components/Footer.vue";
+import {useCityStore} from "@/store/cityStore.js";
+import {useTripStore} from "@/store/tripStore.js";
+import {useDateStore} from "@/store/dateStore.js";
+import {useFlightStore} from "@/store/flightStore.js";
 
-
-  export default {
+export default {
 
     name:"Home",
     components:{
@@ -298,12 +308,70 @@ import Footer from "@/components/Footer.vue";
       return{
         options: ['Option 1', 'Option 2', 'Option 3'], // Замените на свои опции
         placeholder: 'Select place FROM', // Замените на свой заголовок по умолчанию
-        labelFrom: 'From', // Замените на свой лейбл
-        labelTo:'To',
         inStorage:false,
         userData:{
 
-        }
+        },
+        flights:[
+
+        ],
+        formData:{
+          selectedFrom:null,
+          selectedTo:null,
+          selectedOption:null,
+          depart_date:null,
+          return_date:null,
+        },
+        flightStore:useFlightStore(),
+
+      }
+    },
+    computed:{
+      selectedFrom(){
+        const cityStore = useCityStore();
+        this.formData.selectedFrom = cityStore.selectedFrom
+        return this.formData.selectedFrom
+      },
+      selectedTo(){
+        const cityStore = useCityStore();
+        this.formData.selectedTo = cityStore.selectedTo
+        // console.log(this.formData.selectedFrom)
+        return this.formData.selectedTo
+      },
+      selectedOption(){
+        const tripStore = useTripStore();
+        this.formData.selectedOption = tripStore.selectedOption
+        return this.formData.selectedOption
+      },
+      departDate(){
+        const dateStore = useDateStore();
+        this.formData.depart_date = dateStore.depart_date
+        return this.formData.depart_date
+      },
+      arrivalDate(){
+        const dateStore = useDateStore();
+        this.formData.return_date = dateStore.return_date
+        return this.formData.return_date
+      }
+    },
+    methods:{
+      search(){
+        fetch('http://golobeapi/routes/getFlights.php',{
+          method:'POST',
+          body:JSON.stringify(this.formData)})
+            .then((response) => response.json()) // парсим ответ от сервера в формате JSON
+            .then((data) => {
+              if(data.response === 'success'){
+                this.flightStore.searchFlights = data.flightData
+                this.$router.push('/flightListing')
+              }
+            })
+            .catch((error) => console.error(error)); // ловим ошибки сети и выводим в консоль
+      },
+    },
+    watch:{
+      selectedFrom(){
+
       }
     },
     mounted() {

@@ -1215,7 +1215,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     display: flex;
     align-items: center;
     color: #1C1B1F;
-    padding: 18px 0 18px 16px;
+    padding: 18px 5px 18px 16px;
     background: #FFFFFF;
     border: 1px solid #79747E;
     border-radius: 4px;
@@ -1448,3 +1448,189 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
     color: #FF8682;
 }
 
+/*flightListing*/
+.flightListing{
+
+}
+.flightListing__body{
+
+}
+.flightListing__search-menu{
+    padding: 100px 0 0 0 ;
+
+}
+.flightListing__search-menu__body__form{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    border-radius: 16px;
+    padding: 32px 24px;
+}
+.flightListing__search-menu__body{
+
+}
+.flightListing__search-menu__body__form__middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flightListing__main{
+    margin: 32px 0 0 0;
+    display: flex;
+    gap: 50px;
+}
+.flightListing__main__filters{
+    width: 343px;
+}
+.flightListing__main__filters__body{
+
+}
+.flightListing__main__filters__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #112211;
+    padding: 0 0 32px 0;
+}
+.flightListing__main__filters__price{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 32px 0;
+    border-bottom: 0.5px solid #112211;
+}
+.flightListing__main__filters__price label{
+    padding: 8px 0 0 0;
+}
+.flightListing__main__filters__price__title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    padding: 0 0 16px 0;
+}
+.flightListing__main__filters__airlines{
+    padding: 32px 0 32px 0;
+    border-bottom: 0.5px solid #112211;
+}
+.flightListing__main__filters__airlines__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    padding: 0 0 16px 0;
+}
+.flightListing__main__filters__airlines__list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.flightListing__main__filters__trips{
+    padding: 32px 0 0 0;
+}
+.flightListing__main__filters__trips__title{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    padding: 0 0 16px 0;
+}
+.flightListing__main__filters__trips__list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.flightListing__main__list{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+.flightListing__main__card{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    border-radius: 12px;
+}
+.flightListing__main__card__body{
+    display: flex;
+    padding: 24px 16px;
+    gap: 16px;
+    width: 100%;
+}
+.flightListing__main__card__body__left{
+
+}
+.flightListing__main__card__body__right{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+.flightListing__main__card__body__price{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: right;
+    color: #FF8682;
+}
+.flightListing__main__card__body__infobox{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.flightListing__main__card__body__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.input-box{
+    display: flex;
+    gap: 12px;
+}
+.flightListing__main__card__body__info label{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+}
+.flight-type{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+    opacity: 0.78;
+}
+.timeandcode{
+    display: flex;
+    flex-direction: column;
+}
+.flight-time{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #112211;
+    opacity: 0.78;
+}
+.flight-code{
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+    opacity: 0.4;
+}

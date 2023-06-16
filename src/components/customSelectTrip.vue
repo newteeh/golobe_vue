@@ -1,41 +1,80 @@
+
 <template>
-  <div class="custom-select_trip">
-    <label class="select-label">Trip</label>
-    <div class="select-container">
-      <div class="selected-item" @click="toggleDropdown">
-        <span>{{ selectedOption || placeholder }}</span>
-        <i class="arrow-down"></i>
-      </div>
-      <ul v-if="isOpen" class="dropdown-list">
-        <li v-for="option in options" :key="option" @click="selectOption(option)">
-          {{ option }}
-        </li>
-      </ul>
-    </div>
+  <div  class="custom-select_trip">
+    <label class="input-label" for="trips">Trips</label>
+    <select class="main-input" v-model="selectedOption" name="" id="trips" @change="updateSelectedOption">
+      <option v-for="item in options" :value="item.id">{{item.name}}</option>
+    </select>
   </div>
 </template>
 
+
+
 <script>
+import {useTripStore} from "@/store/tripStore.js";
+
 export default {
   name: "customSelectTrip",
   data() {
     return {
-      isOpen: false,
       selectedOption: '',
-      options: ['Option 1', 'Option 2', 'Option 3'], // Замените на свои опции
-      placeholder: 'Select' // Замените на свой заголовок по умолчанию
+      options: [], // Замените на свои опции
     };
   },
   methods: {
-    toggleDropdown() {
-      this.isOpen = !this.isOpen;
-    },
     selectOption(option) {
-      this.selectedOption = option;
-      this.isOpen = false;
+      this.selectedOption = option.name;
+    },
+    updateSelectedOption(){
+      const tripStore = useTripStore();
+      tripStore.setSelectedOption(this.selectedOption)
     }
+  },
+  computed: {
+    filteredData() {
+      if (this.selectedOption) {
+        return this.options.find(option =>
+            option.name === this.selectedOption
+        );
+      } else {
+        return null;
+      }
+    }
+  },
+  watch:{
+  //   selectedOption(){
+  //     fetch('http://golobeapi/routes/getFlights.php', {
+  //       method: 'POST',
+  //       body:JSON.stringify({
+  //         id_trips:this.selectedOption
+  //       })
+  //     })
+  //         .then(response => response.json())
+  //         .then(data => {
+  //           if (data.success === true) {
+  //             this.flights = data.flightData || [];
+  //           }
+  //         })
+  //         .catch(error => console.error(error));
+  //   }
+  },
+
+  mounted() {
+    fetch('http://golobeapi/routes/getTrips.php', {
+      method: 'GET',
+    })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success === true) {
+
+            this.options = data['tripData'].tripData;
+
+          }
+        })
+        .catch(error => console.error(error));
   }
 }
+
 </script>
 
 <style scoped>
@@ -43,7 +82,7 @@ export default {
   position: relative;
   display: inline-block;
   z-index: 1;
-  width: 140px;
+  width: 200px;
 }
 
 .select-label {

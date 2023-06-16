@@ -20,7 +20,7 @@
                 <div class="login-section__body__left__form-box__input-box__email">
                   <label class="input-label" for="email">Email</label>
                   <div>
-                    <input v-model="formData.email" class="main-input" id="email" type="text" placeholder="Enter your email">
+                    <input v-model="formData.email" class="main-input" id="email" type="email" placeholder="Enter your email">
                   </div>
                 </div>
                 <div class="login-section__body__left__form-box__input-box__password">
@@ -68,35 +68,50 @@ export default {
 
   },
   computed:{
-    isPasswordValidF() {
-      const minLength = 8;
-      const password = this.password;
-
-      if (password.length >= minLength || password.length < 64) {
-        this.isPasswordValid = true;
-      } else {
-        this.isPasswordValid = false;
-      }
-    }
+    // isPasswordValidF() {
+    //   const minLength = 8;
+    //   const password = this.password;
+    //
+    //   if (password.length >= minLength || password.length < 64) {
+    //     this.isPasswordValid = true;
+    //   } else {
+    //     this.isPasswordValid = false;
+    //   }
+    // }
   },
   methods:{
     onsubmit() {
-      fetch('http://golobeapi/routes/login.php', {
-        method: 'POST',
-        body: JSON.stringify(this.formData),
-      })
+      if (this.formData.password.trim() === '') {
+        alert('Пожалуйста введите пароль.');
+      } else if (this.formData.password.length < 8 || this.formData.password.length > 20) {
+        alert('Допустимая длина пароля от 8 до 20 символов');
+      }
+      else if (this.formData.email.trim() === '') {
+        alert('Please enter your email.');
+      } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/.test(this.formData.email)) {
+        alert('Please enter a valid email address.');
+      }
+      else {
+        fetch('http://golobeapi/routes/login.php', {
+          method: 'POST',
+          body: JSON.stringify(this.formData),
+        })
 
-          .then((response) => response.json()) // парсим ответ от сервера в формате JSON
-          .then((data) => {
-            console.log(data)
-            if (data.success === true) {
-              alert(data.message)
-              localStorage.setItem('user', JSON.stringify(data.userData))
-              this.$router.push('/account');
-            }
+            .then((response) => response.json()) // парсим ответ от сервера в формате JSON
+            .then((data) => {
+              console.log(data)
+              if (data.success === true) {
+                alert(data.message)
+                localStorage.setItem('user', JSON.stringify(data.userData))
+                this.$router.push('/account');
+              } else {
+                alert(data.message)
+              }
 
-          })
-          .catch((error) => console.error(error)); // ловим ошибки сети и выводим в консоль
+            })
+            .catch((error) => console.error(error)); // ловим ошибки сети и выводим в консоль
+      }
+
     }
   }
 }

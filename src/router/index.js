@@ -8,6 +8,7 @@ import customSelectPassenegersClasses from "@/components/customSelectPassenegers
 import Account from "@/views/Account.vue";
 import flightsSearch from "@/views/flightsSearch.vue";
 import adminPanel from "@/views/adminPanel.vue";
+import flightListing from "@/views/flightListing.vue";
 
 
 const router = createRouter({
@@ -57,6 +58,11 @@ const router = createRouter({
       path:'/adminPanel',
       name:'adminPanel',
       component:adminPanel
+    },
+    {
+      path:'/flightListing',
+      name:'flightListing',
+      component:flightListing
     }
 
 
